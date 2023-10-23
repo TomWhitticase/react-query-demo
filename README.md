@@ -10,4 +10,4 @@ This project is a very simple todo list react application created to demonstrate
 
 This project only scratches the surface of what you can do with react query
 
-TanStack Query: https://tanstack.com/query/latest
+Learn more about TanStack Query: https://tanstack.com/query/latest
