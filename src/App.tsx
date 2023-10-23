@@ -21,7 +21,7 @@ export default function App() {
             <div className="text-xs text-red-500 border-red-500 border-r-2 border-b-2 rounded-br-md px-1 w-min whitespace-nowrap">
               QueryClientProvider
             </div>
-            <div className=" flex flex-col gap-4 p-6">
+            <div className=" flex flex-col gap-4 p-8">
               <Header />
               <Todos />
               <AddTodo />
