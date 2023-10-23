@@ -15,7 +15,7 @@ const Todos = () => {
   });
 
 
-  const { mutate } = useMutation({
+  const { mutate, isPending } = useMutation({
     mutationFn: apiService.toggleComplete,
     onError: () => {
       queryClient.invalidateQueries({ queryKey: ['todos'] });
@@ -43,13 +43,15 @@ const Todos = () => {
   }
 
   return (
-    <div className="border-black border-2 rounded-md text-2xl">
+    <div className="border-black relative border-2 rounded-md text-2xl">
       <div className="text-xs border-black border-r-2 border-b-2 rounded-br-md px-1 w-min whitespace-nowrap">
         Todos.tsx
       </div>
       {isLoading ? <div className="animate-pulse p-2">
         Loading...
-      </div> : <ul className="p-2">{
+      </div> : <ul className="p-2">
+        {isPending && <p className='absolute top-1 right-1 text-xs animate-pulse'>Mutation pending...</p>}
+        {
       data?.map((todoItem)=> (
         <li key={todoItem.id} className='flex items-center justify-between'>
           {todoItem.title}
